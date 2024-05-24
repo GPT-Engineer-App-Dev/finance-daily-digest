@@ -4,25 +4,25 @@ const Index = ({ colorMode, toggleColorMode }) => {
   return (
     <Container maxW="container.xl" p={0}>
       {/* Navigation Bar */}
-      <Box bg={colorMode === "dark" ? "gray.900" : "brand.900"} color={colorMode === "dark" ? "gray.100" : "white"} py={4}>
+      <Box bg={colorMode === "dark" ? "gray.900" : "brand.700"} color={colorMode === "dark" ? "gray.100" : "white"} py={4}>
         <Flex justify="space-between" align="center" maxW="container.xl" mx="auto" px={4}>
           <Heading as="h1" size="lg">
             Financial Times
           </Heading>
           <HStack spacing={8}>
-            <Link href="#" _hover={{ textDecoration: "none", color: "gray.400" }}>
+            <Link href="#" _hover={{ textDecoration: "none", color: colorMode === "dark" ? "gray.400" : "gray.200" }}>
               Home
             </Link>
-            <Link href="#" _hover={{ textDecoration: "none", color: "gray.400" }}>
+            <Link href="#" _hover={{ textDecoration: "none", color: colorMode === "dark" ? "gray.400" : "gray.200" }}>
               Markets
             </Link>
-            <Link href="#" _hover={{ textDecoration: "none", color: "gray.400" }}>
+            <Link href="#" _hover={{ textDecoration: "none", color: colorMode === "dark" ? "gray.400" : "gray.200" }}>
               Companies
             </Link>
-            <Link href="#" _hover={{ textDecoration: "none", color: "gray.400" }}>
+            <Link href="#" _hover={{ textDecoration: "none", color: colorMode === "dark" ? "gray.400" : "gray.200" }}>
               Economy
             </Link>
-            <Link href="#" _hover={{ textDecoration: "none", color: "gray.400" }}>
+            <Link href="#" _hover={{ textDecoration: "none", color: colorMode === "dark" ? "gray.400" : "gray.200" }}>
               Opinion
             </Link>
             <Switch isChecked={colorMode === "dark"} onChange={toggleColorMode} />
