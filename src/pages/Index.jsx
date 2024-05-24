@@ -1,10 +1,10 @@
-import { Box, Container, Flex, Heading, HStack, Link, Text, VStack } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, HStack, Link, Text, VStack, Switch } from "@chakra-ui/react";
 
-const Index = () => {
+const Index = ({ colorMode, toggleColorMode }) => {
   return (
     <Container maxW="container.xl" p={0}>
       {/* Navigation Bar */}
-      <Box bg="brand.900" color="white" py={4}>
+      <Box bg={colorMode === "dark" ? "gray.900" : "brand.900"} color={colorMode === "dark" ? "gray.100" : "white"} py={4}>
         <Flex justify="space-between" align="center" maxW="container.xl" mx="auto" px={4}>
           <Heading as="h1" size="lg">
             Financial Times
@@ -25,6 +25,7 @@ const Index = () => {
             <Link href="#" _hover={{ textDecoration: "none", color: "gray.400" }}>
               Opinion
             </Link>
+            <Switch isChecked={colorMode === "dark"} onChange={toggleColorMode} />
           </HStack>
         </Flex>
       </Box>
@@ -86,7 +87,7 @@ const Index = () => {
       </Flex>
 
       {/* Footer */}
-      <Box bg="brand.900" color="white" py={4} mt={8}>
+      <Box bg={colorMode === "dark" ? "gray.900" : "white"} color={colorMode === "dark" ? "gray.100" : "gray.800"} py={4} mt={8}>
         <Flex justify="space-between" align="center" maxW="container.xl" mx="auto" px={4}>
           <Text>&copy; 2023 Financial Times</Text>
           <HStack spacing={8}>
